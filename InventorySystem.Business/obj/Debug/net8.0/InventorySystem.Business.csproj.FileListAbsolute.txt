@@ -1,0 +1,15 @@
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\InventorySystem.Business.csproj.AssemblyReference.cache
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\InventorySystem.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\InventorySystem.Business.AssemblyInfoInputs.cache
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\InventorySystem.Business.AssemblyInfo.cs
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\InventorySystem.Business.csproj.CoreCompileInputs.cache
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\bin\Debug\net8.0\InventorySystem.Business.deps.json
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\bin\Debug\net8.0\InventorySystem.Business.dll
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\bin\Debug\net8.0\InventorySystem.Business.pdb
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\bin\Debug\net8.0\InventorySystem.Data.dll
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\bin\Debug\net8.0\InventorySystem.Data.pdb
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\Inventor.F7849731.Up2Date
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\InventorySystem.Business.dll
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\refint\InventorySystem.Business.dll
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\InventorySystem.Business.pdb
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\ref\InventorySystem.Business.dll

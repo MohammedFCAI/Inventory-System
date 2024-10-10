@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\InventorySystem.Presentation.props" />
+</Project>
