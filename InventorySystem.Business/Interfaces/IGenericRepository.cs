@@ -15,5 +15,6 @@ namespace InventorySystem.Business.Interfaces
         void Remove(T entity);
         void RemoveRange(IEnumerable<T> entities);
         void Update(T entity);
+        Task<int> CountAsync();
     }
 }

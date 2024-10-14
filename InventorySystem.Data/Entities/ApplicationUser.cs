@@ -8,5 +8,6 @@ namespace InventorySystem.Data.Entities
 {
     public class ApplicationUser
     {
+        public string id { set; get; }
     }
 }

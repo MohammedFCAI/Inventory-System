@@ -2,6 +2,7 @@
 {
     public class Product
     {
+        // We need to add image attribute 
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

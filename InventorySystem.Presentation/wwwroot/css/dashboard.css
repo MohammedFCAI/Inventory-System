@@ -1,0 +1,66 @@
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+.card-icon {
+    font-size: 3rem;
+    color: #ce64b2;
+}
+
+.card-body h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card-body .count {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#stockChartContainer {
+    margin-top: 50px;
+}
+
+#stockChart,
+#barChart {
+    width: 100%;
+    height: 250px;
+}
+
+.btn-restock {
+    background-color: #e6f9e6;
+    color: #28a745;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.25rem;
+}
+
+.btn-take {
+    background-color: #f9e6e6;
+    color: #dc3545;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.25rem;
+}
+
+.table-container {
+    margin-top: 50px;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.chart {
+    flex: 1;
+    margin: 0 10px;
+}

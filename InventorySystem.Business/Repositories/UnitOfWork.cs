@@ -13,6 +13,7 @@ namespace InventorySystem.Business.Repositories
             Categories = new CategoryRepository(context);
             Products = new ProductRepository(context);
             Suppliers = new SupplierRepository(context);
+            Stocks = new StockRepository(context);
         }
 
         public ICategoryRepository Categories { get; private set; }
@@ -20,6 +21,7 @@ namespace InventorySystem.Business.Repositories
         public IProductRepository Products { get; private set; }
 
         public ISupplierRepository Suppliers { get; private set; }
+        public IStockRepository Stocks { get; private set; }
 
         public void Dispose()
         {

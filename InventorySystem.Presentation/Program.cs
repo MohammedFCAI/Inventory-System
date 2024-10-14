@@ -1,5 +1,7 @@
 using InventorySystem.Business.Interfaces;
 using InventorySystem.Business.Repositories;
+using InventorySystem.Business.Services.Abstraction;
+using InventorySystem.Business.Services.Implementation;
 using InventorySystem.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +19,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // DI
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-
+builder.Services.AddScoped<IDashboardService, DashboardService>();
 
 var app = builder.Build();
 

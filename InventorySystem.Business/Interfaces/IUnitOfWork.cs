@@ -5,7 +5,7 @@
         ICategoryRepository Categories { get; }
         IProductRepository Products { get; }
         ISupplierRepository Suppliers { get; }
-
+        IStockRepository Stocks { get; }
         public void Save();
     }
 }
