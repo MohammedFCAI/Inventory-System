@@ -20,3 +20,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.topright {
+    position: absolute;
+    top: 72px;
+    right: 16px;
+    font-size: 18px;
+}

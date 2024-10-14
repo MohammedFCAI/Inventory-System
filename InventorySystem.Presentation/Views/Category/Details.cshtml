@@ -1,0 +1,27 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center" style="color:darkblue">Employee Details</h1>
+
+<form method="get" class="container mb-5">
+    <div class="col">
+        <label asp-for="Name" class="form-label">Category Name</label>
+        <input asp-for="Name" class="form-control" readonly value="@Model.Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="col">
+        <label asp-for="Description" class="form-label">Category Description</label>
+        <input asp-for="Description" class="form-control" readonly value="@Model.Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="text-center">
+         @* <button asp-action="Edit" type="submit" class="btn btn-primary" asp-route-id="@Model.Id">Edit</button> *@
+        <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back To List</a>
+    </div>
+</form>
+

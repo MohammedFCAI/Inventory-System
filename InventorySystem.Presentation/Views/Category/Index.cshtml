@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-6"> 
+        <h1>All Categories</h1>
+    </div>
+    <div class="col-6">
+        <a asp-controller="Category" asp-action="Create" class="btn  btn-primary topright"><i class="bi bi-plus-circle-dotted"></i> Create New Category</a>
+    </div>
+</div>
+
+<br />
+
+ @if (Model.Count() > 0)
+ {
+     <table class="mt-4 table table-striped table-hover">
+         <thead>
+             <tr class="text-center">
+                 <th>Number</th>
+                 <th>Name</th>
+                 <th>Details</th>
+                 <th>Update</th>
+                 <th>Delete</th>
+             </tr>
+         </thead>
+
+         <tbody>
+             @for (int i = 0; i < Model.Count(); i++)
+             {
+                 var category = Model.ElementAt(i);
+                 <tr class="text-center">
+                     <td>@(i + 1)</td>
+                     <td>@category.Name</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@category.Id" class="btn btn-warning">
+                            <i class="bi bi-eye-fill"></i>
+                            Details
+                        </a>
+                    </td>
+                     <td>
+                         <a asp-action="Edit" asp-route-id="@category.Id" class="btn btn-info">
+                             <i class="bi bi-pencil-square"></i>
+                             Edit
+                         </a>
+                     </td>
+                     <td>
+                         <a asp-action="Delete" asp-route-id="@category.Id" class="btn btn-danger"
+                            onclick="return confirm('Are you sure to delete this category?');">
+                             <i class="bi bi-trash"></i>
+                             Delete
+                         </a>
+                     </td>
+                 </tr>
+             }
+         </tbody>
+     </table>
+ }
+ else
+ {
+     <div class="mt-4 alert alert-warning">
+         <h4>There is no categories!</h4>
+     </div>
+ }

@@ -13,3 +13,4 @@ D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net
 D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\refint\InventorySystem.Business.dll
 D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\InventorySystem.Business.pdb
 D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\ref\InventorySystem.Business.dll
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Business\obj\Debug\net8.0\InventorySystem.Business.sourcelink.json

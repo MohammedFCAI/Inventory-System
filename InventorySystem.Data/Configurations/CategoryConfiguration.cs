@@ -10,6 +10,8 @@ namespace InventorySystem.Data.Configurations
         {
             // Fluent APIs
             throw new NotImplementedException();
+
+            //builder.HasKey(x => x.Id); 
         }
 
     }

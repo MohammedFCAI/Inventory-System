@@ -12,3 +12,4 @@ D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Data\obj\Debug\net8.0\
 D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Data\obj\Debug\net8.0\InventorySystem.Data.pdb
 D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Data\obj\Debug\net8.0\InventorySystem.Data.genruntimeconfig.cache
 D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Data\obj\Debug\net8.0\ref\InventorySystem.Data.dll
+D:\Mohammed\Depi\Projects\InventorySystem\InventorySystem.Data\obj\Debug\net8.0\InventorySystem.Data.sourcelink.json

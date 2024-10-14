@@ -1,65 +1,8 @@
 ﻿@using InventorySystem.Data.Entities
-@model IEnumerable<Product>
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
 
-<div class="container mt-5">
-    <h1 class="text-primary text-center mb-3" style="">Products List</h1>
-
-
-    <div class="d-flex justify-content-between mb-3 align-items-center">
-        <a asp-action="Add" class="btn btn-primary">
-            <i class="bi bi-plus-circle"></i>
-            Create New Product
-        </a>
-        <form asp-action="Index" method="get" class="input-group" style="width: 250px;">
-            <input id="search-focus" type="search" name="searchTerm" class="form-control" placeholder="Search" aria-label="Search" />
-            <button type="submit" class="btn btn-primary">
-                <i class="bi bi-search"></i>
-            </button>
-        </form>
-    </div>
-
-    @if (!Model.Any())
-    {
-            <div class="alert alert-warning text-center">
-                No products available.
-            </div>
-    }
-    else
-    {
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr class="text-center">
-                        <th>Number</th>
-                        <th>Name</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                @for (int i = 0; i < Model.Count(); i++)
-                {
-                    var product = Model.ElementAt(i);
-                            <tr class="text-center">
-                                <td>@(i + 1)</td>
-                                <td>@product.Name</td>
-                                <td><a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-info">
-                                        <i class="bi bi-pencil-square"></i>
-                                    Edit</a></td>      
-                                <td>
-                                    <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger"
-                                       onclick="return confirm('Are you sure to delete this Product?');">
-                                        <i class="bi bi-trash"></i>
-                                       Delete</a>
-                                </td>
-                            </tr>
-                }
-                </tbody>
-            </table>
-    }
-</div>
+<a asp-action="Index" asp-controller="Category">Go To Catgories List</a>

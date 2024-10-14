@@ -1,3 +1,4 @@
+using AspNetCoreHero.ToastNotification;
 using InventorySystem.Business.Interfaces;
 using InventorySystem.Business.Repositories;
 using InventorySystem.Data.Contexts;
@@ -18,6 +19,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // DI
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
+// Add Toast
+builder.Services.AddNotyf(config =>
+{
+    config.DurationInSeconds = 3;
+    config.IsDismissable = true;
+    config.Position = NotyfPosition.TopCenter;
+});
 
 var app = builder.Build();
 

@@ -7,18 +7,19 @@ namespace InventorySystem.Presentation.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+
         private readonly IUnitOfWork _unitOfWork;
-        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
+
+        public HomeController(IUnitOfWork unitOfWork)
         {
-            _logger = logger;
             _unitOfWork = unitOfWork;
         }
 
+
         public IActionResult Index()
         {
-            var products = _unitOfWork.Products.GetAll().ToList();
-            return View(products);
+            var categories = _unitOfWork.Categories.GetAll().ToList();
+            return View(categories);
         }
 
         public IActionResult Privacy()
