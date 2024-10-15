@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InventorySystem.Presentation.Controllers
 {
-    [Controller]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
