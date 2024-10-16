@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj": {}
+    "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj": {
+    "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj",
         "projectName": "InventorySystem.Data",
-        "projectPath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj",
+        "projectPath": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Data\\obj\\",
         "projectStyle": "PackageReference",
