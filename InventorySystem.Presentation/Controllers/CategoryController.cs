@@ -88,20 +88,35 @@ namespace InventorySystem.Presentation.Controllers
             return View(model);
         }
 
-        [HttpGet]
+        //[HttpGet]
+        //public IActionResult Delete(int id)
+        //{
+        //    var category = _unitOfWork.Categories.GetById(id);
+        //    if (category != null)
+        //    {
+
+        //        _unitOfWork.Categories.Remove(category);
+        //        _unitOfWork.Save();
+        //        _notyService.Success("Category Deleted Successfully!");
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return BadRequest();
+        //}
+
+        [HttpPost]
         public IActionResult Delete(int id)
         {
             var category = _unitOfWork.Categories.GetById(id);
             if (category != null)
             {
-
                 _unitOfWork.Categories.Remove(category);
                 _unitOfWork.Save();
                 _notyService.Success("Category Deleted Successfully!");
-                return RedirectToAction(nameof(Index));
+                return Json(new { success = true, message = "Category Deleted Successfully!" });
             }
-            return BadRequest();
+            return Json(new { success = false, message = "Category not found!" });
         }
+
 
 
         [HttpGet]

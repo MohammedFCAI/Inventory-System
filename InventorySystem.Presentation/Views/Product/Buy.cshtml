@@ -1,0 +1,167 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Cart";
+    Product product = Model;
+}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+    <form asp-action="Buy" method="post">
+        <!-- Hidden fields for all product properties -->
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="Name" />
+        <input type="hidden" asp-for="Description" />
+        <input type="hidden" asp-for="Price" />
+        <input type="hidden" asp-for="StockQuantity" />
+        <input type="hidden" asp-for="ImageUrl" />
+        <input type="hidden" asp-for="CategoryId" />
+        <input type="hidden" asp-for="SupplierId" />
+
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="width:50%">Product</th>
+                    <th style="width:10%">Price</th>
+                    <th style="width:8%">Quantity</th>
+                    <th style="width:22%" class="text-center">Subtotal</th>
+                    <th style="width:10%"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model is not null)
+                {
+                        <tr>
+                            <td data-th="Product">
+                                <div class="row">
+                                    <div class="col-sm-2 hidden-xs">
+                                        <img src="@product.ImageUrl" alt="Product Image" class="img-responsive" />
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <h4 class="nomargin">@product.Name</h4>
+                                        <p>@product.Description</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td data-th="Price">$<span class="product-price">@product.Price</span></td>
+                            <td data-th="Quantity">
+                                <input name="quantity" type="number" class="form-control text-center quantity-input" value="1" min="1" />
+                            </td>
+                            <td data-th="Subtotal" class="text-center">$<span class="subtotal">@((product.Price * 1).ToString("F2"))</span></td>
+                            <td class="actions" data-th="">
+                                <button type="button" class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                            </td>
+                        </tr>
+                }
+                else
+                {
+                        <tr>
+                            <td colspan="5" class="text-center">No product to buy!</td>
+                        </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr class="visible-xs">
+                    <td class="text-center">
+                        <strong>Total: $<span class="total">@product?.Price.ToString("F2")</span></strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a asp-action="Index" class="btn btn-warning"><i class="fa fa-angle-left"></i> Return To Products</a>
+                    </td>
+                    <td colspan="2" class="hidden-xs"></td>
+                    <td class="hidden-xs text-center">
+                        <strong>Total: $<span class="total">@product?.Price.ToString("F2")</span></strong>
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Function to update the subtotal and total when the quantity changes
+        function updateTotals() {
+            var price = parseFloat($('.product-price').text());
+            var quantity = parseInt($('.quantity-input').val());
+            var subtotal = price * quantity;
+
+            // Update the subtotal for the row
+            $('.subtotal').text(subtotal.toFixed(2));
+
+            // Update the total amount
+            $('.total').text(subtotal.toFixed(2));
+        }
+
+        // Trigger updateTotals when the quantity input changes
+        $('.quantity-input').on('input', function() {
+            updateTotals();
+        });
+
+        // Initial call to set totals based on initial quantity
+        updateTotals();
+    });
+</script>
+
+<style>
+    .table>tbody>tr>td, .table>tfoot>tr>td {
+        vertical-align: middle;
+    }
+
+    table#cart tbody td .form-control {
+        width: 20%;
+        display: inline !important;
+    }
+
+    .actions .btn {
+        width: 36%;
+        margin: 1.5em 0;
+    }
+
+    .actions .btn-info {
+        float: left;
+    }
+
+    .actions .btn-danger {
+        float: right;
+    }
+
+    table#cart thead {
+        display: none;
+    }
+
+    table#cart tbody td {
+        display: block;
+        padding: .6rem;
+        min-width: 320px;
+    }
+
+    table#cart tbody tr td:first-child {
+        background: #333;
+        color: #fff;
+    }
+
+    table#cart tbody td:before {
+        content: attr(data-th);
+        font-weight: bold;
+        display: inline-block;
+        width: 8rem;
+    }
+
+    table#cart tfoot td {
+        display: block;
+    }
+
+    table#cart tfoot td .btn {
+        display: block;
+    }
+</style>

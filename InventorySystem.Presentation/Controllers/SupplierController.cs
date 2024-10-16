@@ -1,19 +1,20 @@
-﻿using InventorySystem.Business.Interfaces;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using InventorySystem.Business.Interfaces;
 using InventorySystem.Data.Entities;
 using InventorySystem.Presentation.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace InventorySystem.Presentation.Controllers
 {
     public class SupplierController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly INotyfService _notyService;
 
-        public SupplierController(IUnitOfWork unitOfWork)
+        public SupplierController(IUnitOfWork unitOfWork, INotyfService notyService)
         {
             _unitOfWork = unitOfWork;
+            _notyService = notyService;
         }
         public IActionResult Index()
         {
@@ -40,7 +41,7 @@ namespace InventorySystem.Presentation.Controllers
 
                 _unitOfWork.Suppliers.Add(supplier);
                 _unitOfWork.Save();
-
+                _notyService.Success("Supplier Added Successfully!");
                 return RedirectToAction(nameof(Index));
             }
 
@@ -80,7 +81,7 @@ namespace InventorySystem.Presentation.Controllers
 
                 _unitOfWork.Suppliers.Update(supplier);
                 _unitOfWork.Save();
-
+                _notyService.Success("Supplier Edited Successfully!");
                 return RedirectToAction(nameof(Index));
             }
             return View(viewModel);
@@ -94,6 +95,7 @@ namespace InventorySystem.Presentation.Controllers
             {
                 _unitOfWork.Suppliers.Remove(supplier);
                 _unitOfWork.Save();
+                _notyService.Success("Supplier Deleted Successfully!");
                 return Json(new { success = true });
             }
             return Json(new { success = false, message = "Supplier not found." });

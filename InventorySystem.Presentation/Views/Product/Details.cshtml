@@ -1,0 +1,53 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1 class="text-center" style="color:darkblue">Product Details</h1>
+
+<form method="get" class="container mb-5">
+    <div class="text-center mb-3">
+        <img src="@Model.ImageUrl" alt="Product Image" class="img-responsive" style="max-width: 300px; max-height: 300px;" />
+    </div>
+
+    <div class="col">
+        <label asp-for="Name" class="form-label">Product Name</label>
+        <input asp-for="Name" class="form-control" readonly value="@Model.Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="col">
+        <label asp-for="Description" class="form-label">Product Description</label>
+        <input asp-for="Description" class="form-control" readonly value="@Model.Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="col">
+        <label asp-for="Price" class="form-label">Price</label>
+        <input asp-for="Price" class="form-control" readonly value="@Model.Price.ToString("C")" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="col">
+        <label asp-for="StockQuantity" class="form-label">Stock Quantity</label>
+        <input asp-for="StockQuantity" class="form-control" readonly value="@Model.StockQuantity" />
+        <span asp-validation-for="StockQuantity" class="text-danger"></span>
+    </div>
+
+    <div class="col">
+        <label asp-for="Category.Name" class="form-label">Category</label>
+        <input asp-for="Category.Name" class="form-control" readonly value="@Model.Category?.Name" />
+        <span asp-validation-for="Category.Name" class="text-danger"></span>
+    </div>
+
+    <div class="col">
+        <label asp-for="Supplier.Name" class="form-label">Supplier</label>
+        <input asp-for="Supplier.Name" class="form-control" readonly value="@Model.Supplier?.Name" />
+        <span asp-validation-for="Supplier.Name" class="text-danger"></span>
+    </div>
+
+    <div class="text-center">
+        <a asp-action="Edit" class="btn btn-primary" asp-route-id="@Model.Id">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back To List</a>
+    </div>
+</form>

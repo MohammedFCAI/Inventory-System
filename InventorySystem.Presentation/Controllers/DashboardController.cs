@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using InventorySystem.Business.Services.Abstraction;
-using System.Threading.Tasks;
+﻿using InventorySystem.Business.Services.Abstraction;
+using Microsoft.AspNetCore.Mvc;
 
 namespace InventorySystem.Presentation.Controllers
 {
@@ -18,6 +17,7 @@ namespace InventorySystem.Presentation.Controllers
             var dashboardViewModel = await _dashboardService.GetDashboardDataAsync();
             return View(dashboardViewModel);
         }
+
         public async Task<IActionResult> GenerateReport()
         {
             var reportViewModel = await _dashboardService.GenerateReportAsync();

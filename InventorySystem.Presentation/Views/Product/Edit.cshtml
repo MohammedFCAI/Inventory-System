@@ -1,0 +1,70 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Edit";
+    SelectList CategoriesList = new SelectList(ViewBag?.Categories, "Id", "Name", 0);
+    SelectList SuppliersList = new SelectList(ViewBag?.Suppliers, "Id", "Name");
+}
+
+<h1>Edit Product</h1>
+
+<div class="container mt-5">
+    <!-- Display current image if it exists -->
+    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <div class="form-group text-center">
+            <img src="@Model.ImageUrl" alt="Current Product Image" class="img-fluid" style="max-width: 300px; max-height: 300px;" />
+        </div>
+    }
+
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <input asp-for="StockQuantity" class="form-control" hidden />
+        <input asp-for="ImageUrl" class="form-control" hidden />
+
+        <div class="form-group">
+            <label class="col-form-label" asp-for="ImageFile">Upload Image</label>
+            <input asp-for="ImageFile" type="file" class="form-control" />
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CategoryId" class="control-label"></label>
+            <select asp-for="CategoryId" class="form-control" asp-items="CategoriesList"></select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SupplierId" class="control-label"></label>
+            <select asp-for="SupplierId" class="form-control" asp-items="SuppliersList"></select>
+            <span asp-validation-for="SupplierId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

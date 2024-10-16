@@ -1,4 +1,5 @@
 ﻿using InventorySystem.Data.Contexts;
+using Microsoft.IdentityModel.Tokens;
 using System.ComponentModel.DataAnnotations;
 
 namespace InventorySystem.Presentation.Validations
@@ -10,12 +11,17 @@ namespace InventorySystem.Presentation.Validations
             var context = (ApplicationDbContext)validationContext.GetService(typeof(ApplicationDbContext));
             var categoryName = value as string;
 
-            if (context.Categories.Any(d => d.Name.ToLower() == categoryName.ToLower()))
+            if (!categoryName.IsNullOrEmpty())
             {
-                return new ValidationResult(ErrorMessage ?? "Category name must be unique.");
+                if (context.Categories.Any(d => d.Name.ToLower() == categoryName.ToLower()))
+                {
+                    return new ValidationResult(ErrorMessage ?? "Category name must be unique.");
+                }
+                return ValidationResult.Success;
             }
 
-            return ValidationResult.Success;
+            return new ValidationResult(ErrorMessage ?? "");
+
         }
     }
 }

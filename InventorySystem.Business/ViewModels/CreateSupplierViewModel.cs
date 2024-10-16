@@ -11,6 +11,7 @@ namespace InventorySystem.Presentation.ViewModels
         [Required(ErrorMessage = "Contact information is required.")]
         [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         [StringLength(200, ErrorMessage = "Contact info cannot be longer than 200 characters.")]
+        [Display(Name = "Contact Info.")]
         public string ContactInfo { get; set; }
     }
 }

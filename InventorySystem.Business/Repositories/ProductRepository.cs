@@ -1,6 +1,7 @@
 ﻿using InventorySystem.Business.Interfaces;
 using InventorySystem.Data.Contexts;
 using InventorySystem.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace InventorySystem.Business.Repositories
 {
@@ -10,6 +11,13 @@ namespace InventorySystem.Business.Repositories
 
         public ProductRepository(ApplicationDbContext context) : base(context)
         {
+            _context = context;
+        }
+
+
+        public Product GetByIdWithInclude(int id)
+        {
+            return _context.Products.Include(e => e.Category).Include(E => E.Supplier).FirstOrDefault(I => I.Id == id);
         }
     }
 }

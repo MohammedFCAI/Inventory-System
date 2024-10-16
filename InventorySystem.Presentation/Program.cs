@@ -13,6 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Add Acc
+builder.Services.AddHttpContextAccessor();
+
+
 
 // Register database
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
