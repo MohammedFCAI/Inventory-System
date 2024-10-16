@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yWejvM8+quY=",
+  "dgSpecHash": "qY3mGk7S6G4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
