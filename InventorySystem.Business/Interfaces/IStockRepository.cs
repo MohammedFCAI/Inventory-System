@@ -9,5 +9,7 @@ namespace InventorySystem.Business.Interfaces
 {
     public interface IStockRepository : IGenericRepository<Stock>
     {
+        Task<int> CountRestockOperationsAsync();
+        Task<int> CountTakeOperationsAsync();
     }
 }

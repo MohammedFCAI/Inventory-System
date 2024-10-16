@@ -18,5 +18,10 @@ namespace InventorySystem.Presentation.Controllers
             var dashboardViewModel = await _dashboardService.GetDashboardDataAsync();
             return View(dashboardViewModel);
         }
+        public async Task<IActionResult> GenerateReport()
+        {
+            var reportViewModel = await _dashboardService.GenerateReportAsync();
+            return View(reportViewModel);
+        }
     }
 }

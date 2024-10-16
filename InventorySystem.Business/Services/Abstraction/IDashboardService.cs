@@ -10,5 +10,6 @@ namespace InventorySystem.Business.Services.Abstraction
     public interface IDashboardService
     {
         Task<DashboardViewModel> GetDashboardDataAsync();
+        Task<ReportViewModel> GenerateReportAsync();
     }
 }

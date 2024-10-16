@@ -80,6 +80,30 @@ namespace InventorySystem.Business.Services.Implementation
 
             return dashboardViewModel;
         }
+        public async Task<ReportViewModel> GenerateReportAsync()
+        {
+            var totalProducts = await GetTotalProductsAsync();
+            var totalCategories = await _unitOfWork.Categories.CountAsync();
+            var allStocks = await GetAllStocksAsync();
+            var allProducts = await GetAllProductsAsync();
+            var allSuppliers = await _unitOfWork.Suppliers.GetAllAsync();
+            var allCategories = await _unitOfWork.Categories.GetAllAsync();
+            var totalRestockOperations = await _unitOfWork.Stocks.CountRestockOperationsAsync();
+            var totalTakeOperations = await _unitOfWork.Stocks.CountTakeOperationsAsync(); 
+            var reportViewModel = new ReportViewModel
+            {
+                TotalProducts = totalProducts,
+                TotalCategories = totalCategories,
+                TotalRestockOperations = totalRestockOperations,
+                TotalTakeOperations = totalTakeOperations,
+                AllStocks = allStocks,
+                AllProducts = allProducts,
+                AllSuppliers = allSuppliers,
+                AllCategories = allCategories
+            };
+            return reportViewModel;
+        }
+
 
     }
 }

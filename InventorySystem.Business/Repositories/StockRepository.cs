@@ -15,6 +15,15 @@ namespace InventorySystem.Business.Repositories
 
         public StockRepository(ApplicationDbContext context) : base(context)
         {
+            _context = context;
+        }
+        public async Task<int> CountRestockOperationsAsync()
+        {
+            return await Task.FromResult(_context.Stocks.Count(s => s.Operation == Data.Enum.Operation.Restock));
+        }
+        public async Task<int> CountTakeOperationsAsync()
+        {
+            return await Task.FromResult(_context.Stocks.Count(s => s.Operation == Data.Enum.Operation.Take));
         }
     }
 }

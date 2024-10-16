@@ -1,0 +1,175 @@
+﻿@model InventorySystem.Business.ViewModels.ReportViewModel
+@{
+    ViewData["Title"] = "Generate Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .report-container {
+        border: 2px solid #343a40; /* Border around the report */
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #ffffff; /* White background for the report */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .table {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+        .table th {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+    /* Additional styling for layout */
+    .report-metrics {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+    }
+
+        .report-metrics .card {
+            margin-left: 20px;
+            width: 200px;
+        }
+
+    .print-button {
+        margin-bottom: 20px;
+    }
+</style>
+<div class="container mt-5">
+    <div class="report-container">
+        <h1 class="text-center mb-4">Admin Report</h1>
+
+        <div class="report-metrics">
+            <div class="card bg-light">
+                <div class="card-body text-center">
+                    <h5>Total Products</h5>
+                    <p class="display-4">@Model.TotalProducts</p>
+                </div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body text-center">
+                    <h5>Total Categories</h5>
+                    <p class="display-4">@Model.TotalCategories</p>
+                </div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body text-center">
+                    <h5>Total Restock Operations</h5>
+                    <p class="display-4">@Model.TotalRestockOperations</p>
+                </div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body text-center">
+                    <h5>Total Take Operations</h5>
+                    <p class="display-4">@Model.TotalTakeOperations</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary print-button" onclick="window.print()">Print Report</button>
+
+        <h2 class="mb-4">Stock Operations</h2>
+        <table class="table table-bordered mb-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Operation</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stock in Model.AllStocks)
+                {
+                    <tr>
+                        <td>@stock.ProductName</td>
+                        <td>@stock.Quantity</td>
+                        <td>@stock.Operation</td>
+                        <td>@stock.Date.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h2 class="mb-4">All Products</h2>
+        <table class="table table-bordered mb-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.AllProducts)
+                {
+                    <tr>
+                        <td>@product.Name</td>
+                        <td>@product.Category</td>
+                        <td>@product.Price</td>
+                        <td>@product.StockQuantity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h2 class="mb-4">All Suppliers</h2>
+        <table class="table table-bordered mb-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Supplier Name</th>
+                    <th>Contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var supplier in Model.AllSuppliers)
+                {
+                    <tr>
+                        <td>@supplier.Name</td>
+                        <td>@supplier.ContactInfo</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h2 class="mb-4">All Categories</h2>
+        <table class="table table-bordered mb-4">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Category Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model.AllCategories)
+                {
+                    <tr>
+                        <td>@category.Name</td>
+                        <td>@category.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
