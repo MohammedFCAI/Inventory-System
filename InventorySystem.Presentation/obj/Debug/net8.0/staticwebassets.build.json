@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WIdYQaa3V9li3WZsT5G3XxhbSlpZOpe+ZnXqmM5hVZE=",
+  "Hash": "6lA6ovjnfpZiCifNbhp3ofGWUrYvJC0nsr/lQEi8/Cw=",
   "Source": "InventorySystem.Presentation",
   "BasePath": "_content/InventorySystem.Presentation",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Presentation\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\InventorySystem.Presentation.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Presentation\\wwwroot\\css\\dashboard.css",
+      "SourceId": "InventorySystem.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Presentation\\wwwroot\\",
+      "BasePath": "_content/InventorySystem.Presentation",
+      "RelativePath": "css/dashboard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\dashboard.css"
     },
     {
       "Identity": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Presentation\\wwwroot\\css\\site.css",

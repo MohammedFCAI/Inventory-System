@@ -2949,7 +2949,7 @@
       "projectName": "InventorySystem.Business",
       "projectPath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Business\\obj\\",
+      "outputPath": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

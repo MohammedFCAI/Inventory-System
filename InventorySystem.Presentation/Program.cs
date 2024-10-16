@@ -1,6 +1,8 @@
 using AspNetCoreHero.ToastNotification;
 using InventorySystem.Business.Interfaces;
 using InventorySystem.Business.Repositories;
+using InventorySystem.Business.Services.Abstraction;
+using InventorySystem.Business.Services.Implementation;
 using InventorySystem.Data.Contexts;
 using InventorySystem.Data.Entities;
 using Microsoft.AspNetCore.Identity;
@@ -48,6 +50,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 // DI
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
 
 // Add Toast
 builder.Services.AddNotyf(config =>

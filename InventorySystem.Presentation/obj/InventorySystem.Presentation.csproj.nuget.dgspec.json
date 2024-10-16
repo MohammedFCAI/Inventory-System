@@ -11,7 +11,7 @@
         "projectName": "InventorySystem.Business",
         "projectPath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Business\\obj\\",
+        "outputPath": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -153,7 +153,7 @@
         "projectName": "InventorySystem.Presentation",
         "projectPath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Presentation\\obj\\",
+        "outputPath": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

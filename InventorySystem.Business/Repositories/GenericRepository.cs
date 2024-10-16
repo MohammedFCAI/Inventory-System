@@ -75,5 +75,9 @@ namespace InventorySystem.Business.Repositories
             _dbSet.Update(entity);
             _context.SaveChanges();
         }
+        public async Task<int> CountAsync()
+        {
+            return await _dbSet.CountAsync();
+        }
     }
 }

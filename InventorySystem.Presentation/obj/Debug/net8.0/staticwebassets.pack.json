@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\InventorySystem.Presentation.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Presentation\\wwwroot\\css\\dashboard.css",
+      "PackagePath": "staticwebassets\\css\\dashboard.css"
+    },
+    {
       "Id": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Presentation\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
