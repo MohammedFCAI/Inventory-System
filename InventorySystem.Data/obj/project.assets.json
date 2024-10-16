@@ -4284,11 +4284,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\new test\\InventorySystem.Data\\InventorySystem.Data.csproj",
       "projectName": "InventorySystem.Data",
-      "projectPath": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj",
+      "projectPath": "C:\\Users\\user\\source\\new test\\InventorySystem.Data\\InventorySystem.Data.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Data\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\new test\\InventorySystem.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

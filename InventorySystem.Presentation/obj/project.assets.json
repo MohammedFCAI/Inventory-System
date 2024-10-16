@@ -7939,11 +7939,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\new test\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj",
       "projectName": "InventorySystem.Presentation",
-      "projectPath": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj",
+      "projectPath": "C:\\Users\\user\\source\\new test\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\source\\Inventory-System\\InventorySystem.Presentation\\obj\\",
+      "outputPath": "C:\\Users\\user\\source\\new test\\InventorySystem.Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7961,8 +7961,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj": {
-              "projectPath": "C:\\Users\\user\\Source\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj"
+            "C:\\Users\\user\\source\\new test\\InventorySystem.Business\\InventorySystem.Business.csproj": {
+              "projectPath": "C:\\Users\\user\\source\\new test\\InventorySystem.Business\\InventorySystem.Business.csproj"
             }
           }
         }

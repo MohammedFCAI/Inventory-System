@@ -4,205 +4,195 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/css/dashboard.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link href="~/css/dashboard.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <section class="container mt-5">
-        <div class="row">
-            <div class="col-md-3 mb-4">
-                <div class="card p-3 text-center">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="fas fa-box"></i>
-                        </div>
-                        <h5 class="card-title mt-3">Products</h5>
-                        <p class="count">@Model.TotalProducts</p>
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="card p-3 text-center">
+                <div class="card-body">
+                    <div class="card-icon">
+                        <i class="fas fa-box"></i>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card p-3 text-center">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <h5 class="card-title mt-3">Suppliers</h5>
-                        <p class="count">@Model.TotalSuppliers</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card p-3 text-center">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="fas fa-tags"></i>
-                        </div>
-                        <h5 class="card-title mt-3">Categories</h5>
-                        <p class="count">@Model.TotalCategories</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card p-3 text-center">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h5 class="card-title mt-3">Stock Operations</h5>
-                        <p class="count">@Model.TotalStocks</p>
-                    </div>
+                    <h5 class="card-title mt-3">Products</h5>
+                    <p class="count">@Model.TotalProducts</p>
                 </div>
             </div>
         </div>
 
-        <div class="chart-container">
-            <div class="chart">
-                <h3 class="text-center">Stock Level Over Time</h3>
-                <canvas id="stockChart"></canvas>
-            </div>
-            <div class="chart">
-                <h3 class="text-center">Product Stock Levels</h3>
-                <canvas id="barChart"></canvas>
+        <div class="col-md-3 mb-4">
+            <div class="card p-3 text-center">
+                <div class="card-body">
+                    <div class="card-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h5 class="card-title mt-3">Suppliers</h5>
+                    <p class="count">@Model.TotalSuppliers</p>
+                </div>
             </div>
         </div>
 
-        <div class="table-container">
-            <h3 class="text-center">Stock Operations</h3>
-            <table id="example" class="table table-striped" style="width:100%">
-                <thead>
+        <div class="col-md-3 mb-4">
+            <div class="card p-3 text-center">
+                <div class="card-body">
+                    <div class="card-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h5 class="card-title mt-3">Categories</h5>
+                    <p class="count">@Model.TotalCategories</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card p-3 text-center">
+                <div class="card-body">
+                    <div class="card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h5 class="card-title mt-3">Stock Operations</h5>
+                    <p class="count">@Model.TotalStocks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart">
+            <h3 class="text-center">Stock Level Over Time</h3>
+            <canvas id="stockChart"></canvas>
+        </div>
+        <div class="chart">
+            <h3 class="text-center">Product Stock Levels</h3>
+            <canvas id="barChart"></canvas>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <h3 class="text-center">Stock Operations</h3>
+        <table id="example" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Product ID</th>
+                    <th>Quantity</th>
+                    <th>Operation Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stock in Model.AllStocks)
+                {
                     <tr>
-                        <th>Date</th>
-                        <th>Product ID</th>
-                        <th>Quantity</th>
-                        <th>Operation Type</th>
+                        <td>@stock.Date</td>
+                        <td>@stock.ProductId</td>
+                        <td>@stock.Quantity</td>
+                        <td>
+                            @{
+                                var operationClass = stock.Operation == InventorySystem.Data.Enum.Operation.Restock ? "btn-restock" : "btn-take";
+                                var operationText = stock.Operation.ToString();
+                            }
+                            <span class="@operationClass">@operationText</span>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach (var stock in Model.AllStocks)
-                    {
-                        <tr>
-                            <td>@stock.Date</td>
-                            <td>@stock.ProductId</td>
-                            <td>@stock.Quantity</td>
-                            <td>
-                                @{
-                                    var operationClass = stock.Operation == InventorySystem.Data.Enum.Operation.Restock ? "btn-restock" : "btn-take";
-                                    var operationText = stock.Operation.ToString();
-                                }
-                                <span class="@operationClass">@operationText</span>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </section>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-        const stockLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.StockDates));
-        const stockData = {
-            labels: stockLabels,
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+<script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+
+    const stockLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.StockDates));
+    const stockData = {
+        labels: stockLabels,
+        datasets: [{
+            label: 'Stock Level',
+            data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.StockQuantities)),
+            backgroundColor: 'rgba(0, 123, 255, 0.2)',
+            borderColor: '#007bff',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.3
+        }]
+    };
+
+    const stockConfig = {
+        type: 'line',
+        data: stockData,
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Date'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Stock Quantity'
+                    },
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+
+    const stockChart = new Chart(
+        document.getElementById('stockChart'),
+        stockConfig
+    );
+
+    const productNames = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.ProductNames));
+    const productQuantities = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.ProductQuantities));
+    const productColors = productQuantities.map(quantity => (quantity < 50 ? 'rgba(255, 99, 132, 1)' : 'rgba(75, 192, 192, 1)'));
+
+    const barConfig = {
+        type: 'bar',
+        data: {
+            labels: productNames,
             datasets: [{
-                label: 'Stock Level',
-                data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.StockQuantities)),
-                backgroundColor: 'rgba(0, 123, 255, 0.2)',
-                borderColor: '#007bff',
-                borderWidth: 2,
-                fill: true,
-                tension: 0.3
+                label: 'Product Quantities',
+                data: productQuantities,
+                backgroundColor: productColors,
+                borderColor: 'rgba(0, 123, 255, 1)',
+                borderWidth: 1
             }]
-        };
-
-        const stockConfig = {
-            type: 'line',
-            data: stockData,
-            options: {
-                responsive: true,
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Date'
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Stock Quantity'
-                        },
-                        beginAtZero: true
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Products'
                     }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Quantity'
+                    },
+                    beginAtZero: true
                 }
             }
-        };
+        }
+    };
 
-        const stockChart = new Chart(
-            document.getElementById('stockChart'),
-            stockConfig
-        );
-        const productNames = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.ProductNames));
-        const productQuantities = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.ProductQuantities));
-        const productColors = productQuantities.map(quantity => (quantity < 50 ? 'rgba(255, 99, 132, 1)' : 'rgba(75, 192, 192, 1)'));
-
-        const barConfig = {
-            type: 'bar',
-            data: {
-                labels: productNames,
-                datasets: [{
-                    label: 'Product Quantities',
-                    data: productQuantities,
-                    backgroundColor: productColors,
-                    borderColor: 'rgba(0, 123, 255, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Products'
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Quantity'
-                        },
-                        beginAtZero: true
-                    }
-                }
-            }
-        };
-
-        const barChart = new Chart(
-            document.getElementById('barChart'),
-            barConfig
-        );
-    </script>
-</body>
-</html>
-
+    const barChart = new Chart(
+        document.getElementById('barChart'),
+        barConfig
+    );
+</script>
