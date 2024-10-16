@@ -100,20 +100,48 @@ namespace InventorySystem.Presentation.Controllers
             return View(product);
         }
 
-        [HttpGet]
+        //[HttpGet]
+        //public IActionResult Delete(int id)
+        //{
+        //    var product = _unitOfWork.Products.GetById(id);
+        //    if (product != null)
+        //    {
+
+        //        _unitOfWork.Products.Remove(product);
+        //        _unitOfWork.Save();
+        //        _notyService.Success("Product Deleted Successfully!");
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return BadRequest();
+        //}
+
+        [HttpPost]
         public IActionResult Delete(int id)
         {
-            var product = _unitOfWork.Products.GetById(id);
-            if (product != null)
+            try
             {
+                var product = _unitOfWork.Products.GetById(id);
+                if (product == null)
+                {
+                    return Json(new { success = false, message = "Product not found." });
+                }
 
                 _unitOfWork.Products.Remove(product);
                 _unitOfWork.Save();
                 _notyService.Success("Product Deleted Successfully!");
-                return RedirectToAction(nameof(Index));
+
+                return Json(new { success = true, message = "Product deleted successfully." });
             }
-            return BadRequest();
+            catch (Exception ex)
+            {
+                // Optionally log the exception
+                return Json(new { success = false, message = "An error occurred while deleting the product." });
+            }
         }
+
+
+
+
 
         [HttpGet]
         public IActionResult Buy(int id)

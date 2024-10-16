@@ -20,7 +20,7 @@ namespace InventorySystem.Data.Contexts
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<SupplierCategory>()
-    .HasKey(sc => new { sc.SupplierId, sc.CategoryId });
+                .HasKey(sc => new { sc.SupplierId, sc.CategoryId });
 
             modelBuilder.Entity<SupplierCategory>()
                 .HasOne(sc => sc.Supplier)

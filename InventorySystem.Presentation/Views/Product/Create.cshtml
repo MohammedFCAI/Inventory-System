@@ -1,4 +1,4 @@
-﻿@model InventorySystem.Data.Entities.Product
+﻿@* @model InventorySystem.Data.Entities.Product
 @{
     ViewData["Title"] = "Create";
     SelectList CategoriesList = new SelectList(ViewBag?.Categories, "Id", "Name");
@@ -59,5 +59,138 @@
 </form>
 
 @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+ *@
+
+
+
+ @model InventorySystem.Data.Entities.Product
+@{
+    ViewData["Title"] = "Create Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    SelectList CategoriesList = new SelectList(ViewBag?.Categories, "Id", "Name");
+    SelectList SuppliersList = new SelectList(ViewBag?.Suppliers, "Id", "Name");
+}
+
+<style>
+    .form-container {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        background-color: #4E73DF;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #375a9c;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .main-title {
+        color: #4E73DF;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        color: #6c757d;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+</style>
+
+<h1 class="main-title">Create Product</h1>
+
+<h4 class="subtitle">Product Information</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="form-container">
+            <form asp-action="Create" enctype="multipart/form-data" method="post">
+                <div class="form-group mb-3">
+                    <label class="form-label" asp-for="Name">Product Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter product name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label" asp-for="Description">Product Description</label>
+                    <input asp-for="Description" class="form-control" placeholder="Enter product description" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label" asp-for="Price">Price</label>
+                    <input asp-for="Price" class="form-control" placeholder="Enter product price" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label" asp-for="StockQuantity">Stock Quantity</label>
+                    <input asp-for="StockQuantity" class="form-control" placeholder="Enter stock quantity" />
+                    <span asp-validation-for="StockQuantity" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label" asp-for="ImageFile">Upload Image</label>
+                    <input asp-for="ImageFile" type="file" class="form-control" />
+                    <span asp-validation-for="ImageFile" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label" asp-for="CategoryId">Category</label>
+                    <select asp-for="CategoryId" class="form-control" asp-items="CategoriesList">
+                        <option value="">Select a Category</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label class="form-label" asp-for="SupplierId">Supplier</label>
+                    <select asp-for="SupplierId" class="form-control" asp-items="SuppliersList">
+                        <option value="">Select a Supplier</option>
+                    </select>
+                    <span asp-validation-for="SupplierId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <input type="submit" value="Create" class="btn btn-primary w-100" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.7/jquery.validate.unobtrusive.min.js"></script>
     <partial name="_ValidationScriptsPartial" />
 }
