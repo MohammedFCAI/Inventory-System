@@ -1,67 +1,174 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - InventorySystem.Presentation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/InventorySystem.Presentation.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - InventorySystem.Presentation</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #031d38;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ff4d8b;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.2s;
+        }
+
+        .sidebar ul li i {
+            margin-right: 10px;
+            color: #ff4d8b;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #495057;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-panel {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            height: 100%;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 15px 20px;
+            box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input {
+            border: 2px solid #ced4da;
+            padding: 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+            width: 200px;
+            transition: border-color 0.3s;
+            border-color: #ff4d8b;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .nav-item a {
+            text-decoration: none;
+            color: #343a40;
+        }
+
+        .navbar .nav-item {
+            margin-left: 20px;
+            cursor: pointer;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .nav-item:hover {
+            color: #ff4d8b;
+        }
+
+        .navbar .nav-item i {
+            margin-right: 5px;
+            color: #ff4d8b;
+        }
+
+        @@media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .main-panel {
+                margin-left: 200px;
+                width: calc(100% - 200px);
+            }
+        }
+        .content {
+            margin: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Inventory System</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-
-                    <ul class="navbar-nav flex-grow-1">
-                        @if (!User.Identity.IsAuthenticated)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Register</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Welcome @User.Identity.Name</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Logout</a>
-                            </li>
-                        }
-                    </ul>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h2>Inventory</h2>
+            <ul>
+                <li style="padding: 10%;"><a href="@Url.Action("Index", "Dashboard")"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li style="padding: 10%;"><a href="@Url.Action("Index", "Category")"><i class="fas fa-th-list"></i> Categories</a></li>
+                <li style="padding: 10%;"><a href="@Url.Action("Index", "Products")"><i class="fas fa-box-open"></i> Products</a></li>
+                <li style="padding: 10%;"><a href="@Url.Action("Index", "Supplier")"><i class="fas fa-truck"></i> Suppliers</a></li>
+            </ul>
+        </div>
+        <div class="main-panel">
+            <div class="header">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="navbar">
+                    <div class="nav-item"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container mt-0">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+			<div class="content">
+                @RenderBody()
+            </div>
+        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await Component.InvokeAsync("Notyf")
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
