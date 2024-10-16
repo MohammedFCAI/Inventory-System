@@ -1,8 +1,9 @@
-﻿@using InventorySystem.Data.Entities
-
-@{
-    ViewData["Title"] = "Home Page";
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-
-<a asp-action="Index" asp-controller="Category">Go To Catgories List</a>
+<h1 style="font-weight: bolder; font-size: 50px;">Welcome to the Inventory System</h1>
+<p>Your one-stop solution for managing inventory efficiently and effectively.</p>
+<a asp-controller="Account" asp-action="Login" class="btn btn-primary btn-custom">Log In</a>
+<a asp-controller="Account" asp-action="Register" class="btn btn-secondary btn-custom">Sign Up</a>

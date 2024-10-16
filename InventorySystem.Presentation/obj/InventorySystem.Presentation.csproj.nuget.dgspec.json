@@ -1,31 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj": {}
+    "C:\\Users\\user\\source\\Final test\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj": {}
   },
   "projects": {
-    "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj": {
+    "C:\\Users\\user\\source\\Final test\\InventorySystem.Business\\InventorySystem.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\Final test\\InventorySystem.Business\\InventorySystem.Business.csproj",
         "projectName": "InventorySystem.Business",
-        "projectPath": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj",
-        "packagesPath": "C:\\Users\\moali\\.nuget\\packages\\",
-        "outputPath": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Business\\obj\\",
+        "projectPath": "C:\\Users\\user\\source\\Final test\\InventorySystem.Business\\InventorySystem.Business.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\source\\Final test\\InventorySystem.Business\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\moali\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -33,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj": {
-                "projectPath": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj"
+              "C:\\Users\\user\\source\\Final test\\InventorySystem.Data\\InventorySystem.Data.csproj": {
+                "projectPath": "C:\\Users\\user\\source\\Final test\\InventorySystem.Data\\InventorySystem.Data.csproj"
               }
             }
           }
@@ -79,32 +75,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj": {
+    "C:\\Users\\user\\source\\Final test\\InventorySystem.Data\\InventorySystem.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\Final test\\InventorySystem.Data\\InventorySystem.Data.csproj",
         "projectName": "InventorySystem.Data",
-        "projectPath": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Data\\InventorySystem.Data.csproj",
-        "packagesPath": "C:\\Users\\moali\\.nuget\\packages\\",
-        "outputPath": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Data\\obj\\",
+        "projectPath": "C:\\Users\\user\\source\\Final test\\InventorySystem.Data\\InventorySystem.Data.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\source\\Final test\\InventorySystem.Data\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\moali\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -164,32 +156,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj": {
+    "C:\\Users\\user\\source\\Final test\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\Final test\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj",
         "projectName": "InventorySystem.Presentation",
-        "projectPath": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj",
-        "packagesPath": "C:\\Users\\moali\\.nuget\\packages\\",
-        "outputPath": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Presentation\\obj\\",
+        "projectPath": "C:\\Users\\user\\source\\Final test\\InventorySystem.Presentation\\InventorySystem.Presentation.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\source\\Final test\\InventorySystem.Presentation\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\moali\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -197,8 +185,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj": {
-                "projectPath": "D:\\Testing\\C#\\Inventory-System\\InventorySystem.Business\\InventorySystem.Business.csproj"
+              "C:\\Users\\user\\source\\Final test\\InventorySystem.Business\\InventorySystem.Business.csproj": {
+                "projectPath": "C:\\Users\\user\\source\\Final test\\InventorySystem.Business\\InventorySystem.Business.csproj"
               }
             }
           }
@@ -252,7 +240,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

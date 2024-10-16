@@ -2,10 +2,12 @@
 using InventorySystem.Business.Interfaces;
 using InventorySystem.Data.Entities;
 using InventorySystem.Presentation.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventorySystem.Presentation.Controllers
 {
+    [Authorize]
     public class SupplierController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

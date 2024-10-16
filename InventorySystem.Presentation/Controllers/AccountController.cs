@@ -79,7 +79,7 @@ namespace InventorySystem.Presentation.Controllers
                     {
                         // Create cookie
                         await _signInManager.SignInAsync(user, userModel.RememberMe);
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Dashboard");
                     }
 
                     else
@@ -98,7 +98,7 @@ namespace InventorySystem.Presentation.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

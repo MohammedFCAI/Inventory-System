@@ -3,10 +3,12 @@ using InventorySystem.Business.Helper;
 using InventorySystem.Business.Interfaces;
 using InventorySystem.Data.Entities;
 using InventorySystem.Presentation.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventorySystem.Presentation.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

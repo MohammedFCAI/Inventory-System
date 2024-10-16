@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InventorySystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241016181202_AddProperties")]
-    partial class AddProperties
+    [Migration("20241016191616_initail")]
+    partial class initail
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -150,7 +150,6 @@ namespace InventorySystem.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockId"));
 
                     b.Property<string>("AdminID")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("Date")
@@ -238,9 +237,7 @@ namespace InventorySystem.Data.Migrations
                 {
                     b.HasOne("InventorySystem.Data.Entities.ApplicationUser", "Admin")
                         .WithMany()
-                        .HasForeignKey("AdminID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AdminID");
 
                     b.HasOne("InventorySystem.Data.Entities.Product", "Product")
                         .WithMany()

@@ -2,10 +2,12 @@
 using InventorySystem.Business.Interfaces;
 using InventorySystem.Data.Entities;
 using InventorySystem.Presentation.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InventorySystem.Presentation.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
