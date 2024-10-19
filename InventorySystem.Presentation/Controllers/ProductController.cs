@@ -90,7 +90,7 @@ namespace InventorySystem.Presentation.Controllers
             if (ModelState.IsValid)
             {
                 if (product.ImageFile is not null && product.ImageFile.Length > 0)
-                    product.ImageUrl = FileHelper.UploadFile("ProductPhoto", product.ImageFile);
+                    product.ImageUrl = FileHelper.UploadFile("products", product.ImageFile);
                 _unitOfWork.Products.Update(product);
                 _unitOfWork.Save();
 
@@ -100,20 +100,6 @@ namespace InventorySystem.Presentation.Controllers
             return View(product);
         }
 
-        //[HttpGet]
-        //public IActionResult Delete(int id)
-        //{
-        //    var product = _unitOfWork.Products.GetById(id);
-        //    if (product != null)
-        //    {
-
-        //        _unitOfWork.Products.Remove(product);
-        //        _unitOfWork.Save();
-        //        _notyService.Success("Product Deleted Successfully!");
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return BadRequest();
-        //}
 
         [HttpPost]
         public IActionResult Delete(int id)

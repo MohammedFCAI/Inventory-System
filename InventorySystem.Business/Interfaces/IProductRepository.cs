@@ -6,5 +6,6 @@ namespace InventorySystem.Business.Interfaces
     {
 
         public Product GetByIdWithInclude(int id);
+        public Task<IEnumerable<Product>> GetLowQuantityProductsAsync(int threshold);
     }
 }

@@ -1,4 +1,5 @@
-﻿using InventorySystem.Business.Services.Abstraction;
+﻿using InventorySystem.Business.Interfaces;
+using InventorySystem.Business.Services.Abstraction;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,15 +9,18 @@ namespace InventorySystem.Presentation.Controllers
     public class DashboardController : Controller
     {
         private readonly IDashboardService _dashboardService;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public DashboardController(IDashboardService dashboardService)
+        public DashboardController(IDashboardService dashboardService, IUnitOfWork unitOfWork)
         {
             _dashboardService = dashboardService;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<IActionResult> Index()
         {
             var dashboardViewModel = await _dashboardService.GetDashboardDataAsync();
+
             return View(dashboardViewModel);
         }
 
@@ -25,5 +29,6 @@ namespace InventorySystem.Presentation.Controllers
             var reportViewModel = await _dashboardService.GenerateReportAsync();
             return View(reportViewModel);
         }
+
     }
 }

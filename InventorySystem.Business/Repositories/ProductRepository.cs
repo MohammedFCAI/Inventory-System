@@ -19,5 +19,12 @@ namespace InventorySystem.Business.Repositories
         {
             return _context.Products.Include(e => e.Category).Include(E => E.Supplier).FirstOrDefault(I => I.Id == id);
         }
+
+        public async Task<IEnumerable<Product>> GetLowQuantityProductsAsync(int threshold)
+        {
+            return await _context.Products
+                .Where(p => p.StockQuantity < threshold)
+                .ToListAsync();
+        }
     }
 }

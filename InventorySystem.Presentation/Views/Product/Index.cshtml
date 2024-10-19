@@ -104,8 +104,8 @@ right:0;
                     <th>Details</th>
                     <th>Edit</th>
                     <th>Delete</th>
-                    <th>Buy</th>
-                    <th>Sell</th>
+                    <th>Take</th>
+                    <th>ReSell</th>
                 </tr>
             </thead>
             <tbody>
@@ -134,12 +134,12 @@ right:0;
                         </td>
                         <td>
                             <a asp-action="Buy" asp-route-id="@product.Id" class="btn btn-success">
-                                <i class="bi bi-cart-plus"></i> Buy
+                                <i class="bi bi-cart-plus"></i> Take
                             </a>
                         </td>
                         <td>
                             <a asp-action="Sell" asp-route-id="@product.Id" class="btn btn-light">
-                                <i class="bi bi-cash"></i> Sell
+                                <i class="bi bi-cash"></i> ReSell
                             </a>
                         </td>
                     </tr>

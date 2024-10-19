@@ -1,0 +1,16 @@
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\bin\Release\net8.0\InventorySystem.Business.deps.json
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\bin\Release\net8.0\InventorySystem.Business.dll
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\bin\Release\net8.0\InventorySystem.Business.pdb
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\bin\Release\net8.0\InventorySystem.Data.dll
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\bin\Release\net8.0\InventorySystem.Data.pdb
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\InventorySystem.Business.csproj.AssemblyReference.cache
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\InventorySystem.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\InventorySystem.Business.AssemblyInfoInputs.cache
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\InventorySystem.Business.AssemblyInfo.cs
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\InventorySystem.Business.csproj.CoreCompileInputs.cache
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\InventorySystem.Business.sourcelink.json
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\Inventor.F7849731.Up2Date
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\InventorySystem.Business.dll
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\refint\InventorySystem.Business.dll
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\InventorySystem.Business.pdb
+D:\Testing\DEPI\Inventory-System\InventorySystem.Business\obj\Release\net8.0\ref\InventorySystem.Business.dll

@@ -1,4 +1,5 @@
-﻿using InventorySystem.Data.Entities;
+﻿using InventorySystem.Business.Interfaces;
+using InventorySystem.Data.Entities;
 using InventorySystem.Presentation.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,12 +12,14 @@ namespace InventorySystem.Presentation.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager, IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult Register()
@@ -79,6 +82,13 @@ namespace InventorySystem.Presentation.Controllers
                     {
                         // Create cookie
                         await _signInManager.SignInAsync(user, userModel.RememberMe);
+                        var lowQuantityProducts = await _unitOfWork.Products.GetLowQuantityProductsAsync(50);
+
+                        if (lowQuantityProducts.Any())
+                        {
+                            var message = $"Warning: {lowQuantityProducts.Count()} products have a quantity below 50!";
+                            TempData["LowQuantityMessage"] = message;
+                        }
                         return RedirectToAction("Index", "Dashboard");
                     }
 
